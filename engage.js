@@ -161,19 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Model Suggestion Tool ---
   const ROSTER = [
-    { id: 'gpt-3.5-turbo', name: 'GPT-3.5 Turbo', keywords: ['summarise', 'qa', 'fast', 'cost', 'chatbot'], hint: 'Fast Q&A & summaries (4K tokens)' },
-    { id: 'gpt-3.5-turbo-16k', name: 'GPT-3.5 Turbo (16k)', keywords: ['long chat', 'context', 'history', 'extended'], hint: 'Extended context (16K tokens)' },
-    { id: 'gpt-4-turbo', name: 'GPT-4 Turbo', keywords: ['reason', 'analysis', 'plan', 'long', 'complex'], hint: 'Deep reasoning & long contexts (128K tokens)' },
-    { id: 'gpt-4.1', name: 'GPT-4.1', keywords: ['code diff', 'large file', 'refactor', 'patch'], hint: 'Reliable code diffs & edits' },
-    { id: 'gpt-4.1-mini', name: 'GPT-4.1 Mini', keywords: ['quick code', 'logic puzzle', 'speed'], hint: 'Lightweight coding' },
-    { id: 'gpt-4.1-nano', name: 'GPT-4.1 Nano', keywords: ['mobile', 'embedded', 'low latency'], hint: 'Nano code assistance' },
-    { id: 'gpt-4.5', name: 'GPT-4.5', keywords: ['creative', 'polish', 'factual', 'professional'], hint: 'Polished content & reduced hallucinations' },
-    { id: 'o3', name: 'OpenAI o3', keywords: ['multimodal', 'tool use', 'agentic', 'hypothesis'], hint: 'SOTA multimodal reasoning' },
-    { id: 'o4-mini', name: 'OpenAI o4-mini', keywords: ['fast', 'efficient', 'visual', 'math', 'code'], hint: 'High‑throughput multimodal reasoning' },
-    { id: 'gpt-4o', name: 'GPT-4o', keywords: ['image', 'audio', 'video', 'omni', 'human-like'], hint: 'Omni‑modal conversations' },
-    { id: 'code-interpreter', name: 'Code Interpreter', keywords: ['csv', 'data', 'chart', 'plot', 'python', 'pdf'], hint: 'Python & data analysis' },
-    { id: 'function-calling', name: 'Function Calling', keywords: ['api', 'invoke', 'database', 'action'], hint: 'Trigger back‑end services' },
-    { id: 'retrieval-plugin', name: 'Retrieval Plugin', keywords: ['lookup', 'search', 'docs', 'faq', 'kb'], hint: 'Fetch from knowledge base' },
+    { id: 'gpt-4o', name: 'GPT-4o', keywords: ['most', 'questions', 'general', 'omni', 'default'], hint: 'Great for most questions' },
+    { id: 'gpt-4o-scheduled', name: 'GPT-4o with scheduled tasks', keywords: ['scheduled', 'tasks', 'follow up', 'reminder'], hint: 'Ask ChatGPT to follow up later' },
+    { id: 'gpt-4.5', name: 'GPT-4.5', keywords: ['writing', 'exploring', 'ideas', 'creative'], hint: 'Good for writing and exploring ideas' },
+    { id: 'o3', name: 'o3', keywords: ['advanced', 'reasoning', 'logic', 'chain'], hint: 'Uses advanced reasoning' },
+    { id: 'o4-mini', name: 'o4-mini', keywords: ['fast', 'advanced', 'reasoning', 'speed'], hint: 'Fastest at advanced reasoning' },
+    { id: 'o4-mini-high', name: 'o4-mini-high', keywords: ['coding', 'visual', 'reasoning', 'high'], hint: 'Great at coding and visual reasoning' },
+    { id: 'gpt-4o-mini', name: 'GPT-4o mini', keywords: ['faster', 'most', 'questions', 'mini'], hint: 'Faster for most questions' }
   ];
 
   function pickFromRoster(text) {
