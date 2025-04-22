@@ -211,8 +211,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
   if (contactForm) {
-    // Netlify handles contact form submission (no JS needed).
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Post to Netlify
+      const formData = new FormData(contactForm);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      }).then(() => {
+        contactForm.style.display = 'none';
+        if (contactSuccess) contactSuccess.style.display = 'block';
+      }).catch(() => {
+        contactForm.style.display = 'none';
+        if (contactSuccess) {
+          contactSuccess.innerHTML = '<h3>Thank you!</h3><p>Your message has been sent. Tom will get back to you soon.</p><a class="tool-link" href="/">Return Home</a>';
+          contactSuccess.style.display = 'block';
+        }
+      });
+    });
   }
 
   // Initial state
